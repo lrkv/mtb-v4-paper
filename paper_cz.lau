@@ -1,7 +1,7 @@
 \documentclass{article}
 \usepackage{xltxtra, polyglossia,url,multicol}
 \setdefaultlanguage{czech}
-\setmainfont{Cambria}
+%\setmainfont{Cambria}
 
 \usepackage[a4paper]{geometry}
 \textwidth=17cm
@@ -108,7 +108,7 @@ obr.\,\ref{schemaDCC}.
 
 
 \begin{figure}
-\includegraphics[width=.5\textwidth]{dcc_schema.pdf}
+\includegraphics[width=.5\textwidth]{data/dcc_schema.pdf}
 \caption{Schéma systému DCC použitelného pro domácí kolejiště}% (upraveno podle \cite{DCC})}
 \label{schemaDCC}
 \end{figure}
@@ -172,7 +172,7 @@ schéma zahrnující zmíněné možnosti přináší obr.\,\ref{mtb_schema}.
 \end{multicols}
 
 \begin{figure}
-\includegraphics[width=\textwidth]{mtb_schema.pdf}
+\includegraphics[width=\textwidth]{data/mtb_schema.pdf}
 \caption{Stav řízení kolejiště v LŘKV před modernizací}
 \label{mtb_schema}
 \end{figure}
@@ -414,7 +414,7 @@ S-COM nebo kmitavé vstupy/výstupy nových modulů MTB-UNI.
 \end{multicols}
 
 \begin{figure}
-\includegraphics[width=.5\textwidth]{new_mtb_schema.pdf}
+\includegraphics[width=.5\textwidth]{data/new_mtb_schema.pdf}
 \caption{Modernizovaná část řízení kolejiště v LŘKV}
 \label{new_mtb_schema}
 \end{figure}

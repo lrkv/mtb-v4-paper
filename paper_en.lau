@@ -129,7 +129,7 @@ DCC track control is shown in Figure \ref{DCC}.
 
 
 \begin{figure}
-\includegraphics[width=.5\textwidth]{dcc_schema}
+\includegraphics[width=.5\textwidth]{data/dcc_schema}
 \caption{Schematic of a DCC system applicable to a domestic track.
 Modified according to Wikipedia (2021)\cite{DCC-wiki}}
 \label{schemaDCC}
@@ -206,7 +206,7 @@ Fig.\,\ref{mtb_schema}.
 \end{multicols}
 
 \begin{figure}
-\includegraphics[width=\textwidth]{mtb_schema.pdf}
+\includegraphics[width=\textwidth]{data/mtb_schema.pdf}
 \caption{State of track control in RVCL before modernization}
 \label{mtb_schema}
 \end{figure}
@@ -503,7 +503,7 @@ system.
 \end{multicols}
 
 \begin{figure}
-\includegraphics[width=.5\textwidth]{new_mtb_schema.pdf}
+\includegraphics[width=.5\textwidth]{data/new_mtb_schema.pdf}
 \caption{Modernized track control section in RVCL}
 \label{new_mtb_schema}
 \end{figure}
