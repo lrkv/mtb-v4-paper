@@ -1,0 +1,494 @@
+\documentclass{article}
+\usepackage{xltxtra, polyglossia,url,multicol}
+\setdefaultlanguage{czech}
+\setmainfont{Cambria}
+
+\usepackage[a4paper]{geometry}
+\textwidth=17cm
+\textheight=25cm
+\hoffset -20mm
+\voffset -20mm
+\begin{document}
+\def\kap#1\par{\section{#1}}
+\def\pkap#1\par{\subsection{#1}}
+\def\npkap#1\par{\subsection*{#1}}
+\def\ppkap#1\par{\subsubsection{#1}}
+\def\nazev#1\par{\section*{\huge #1}}
+\def\autori#1\par{\begin{center}\itshape#1\end{center}}
+\def\cite#1{(\ref{#1})}
+\def\uv#1{„#1“}
+%\def\url#1{{\ttfamily#1}}
+
+\nazev Metody elektronického řízení modelového kolejiště
+
+\autori Jiří Rybička, Jan Horáček, Robert Čížek
+
+\bigskip\noindent {\bfseries Abstrakt}
+
+Digitální řízení modelového kolejiště vyžaduje řízení pohybu vozidel a jejich 
+funkcí (zvuky, osvětlení) a řízení traťových prvků (výhybek, návěstidel, 
+rozpojovačů apod.). Zatímco řízení vozidel je dáno standardem, jehož funkčnost 
+běžnému provozu zcela vyhovuje, řízení traťových prvků je možné řešit více 
+způsoby. Pro malá domácí kolejiště je k dispozici komerční řešení několika 
+firem, pro velká kolejiště však takový koncept chybí a řešení se obvykle dělá 
+na míru použití (klubovní kolejiště, trenažéry pro výchovu provozních profesí 
+na železnici). Kolejiště v Laboratoři řízení kolejových vozidel PEF MENDELU 
+lze zařadit do kategorie velkých, proto je nezbytné použít specifický systém. 
+Ten stávající však z více zásadních důvodů nevyhovuje. Proto byl vyvinut 
+systém modernizovaný; součástí návrhu je i celková koncepce a metody 
+řízení velkého kolejiště. Vznikl tím systém splňující poměrně náročné 
+požadavky a umožňující další rozvoj a využití laboratoře.
+
+\begin{multicols}2
+\kap Úvod
+
+Laboratoř řízení kolejových vozidel představuje specializované pracoviště
+disponující dvěma modelovými kolejišti na ploše přes 200~m$^2$. Základním účelem
+laboratoře je uplatnění ve výuce, a to především jako pomůcka pro výuku
+programového řízení technologických celků a potažmo programování obecně.
+Dále se zde řeší závěrečné práce týkající se různých technických aspektů
+provozu (automatické objíždění souprav, kyvadlový provoz motorových osobních
+vlaků apod.). Kolejiště představuje digitálně řízený technologický celek,
+jehož konstrukce byla přizpůsobena standardům provozovaným v Klubu modelářů
+železnic Brno I, v jehož spolupráci laboratoř vznikla a je provozována.
+
+\kap Přehled současného stavu
+
+Digitální řízení relativně rozsáhlého kolejiště vyžaduje přístupy, které jsou
+do značné míry odlišné od možností řízení malých \uv{domácích} kolejišť.
+Základní kritéria, která musí splňovat systém pro řízení větších kolejišť, 
+odvozuje Horáček (2021, s.\,13). Po určité úpravě s ohledem na potřeby 
+laboratoře lze kritéria shrnout do následujících částečně vzájemně
+provázaných bodů:
+
+\begin{enumerate}
+\item Schopnost podporovat řádově stovky traťových prvků (návěstidel, výhybek
+apod.), a to signály více typů.
+\item Udržitelnost v čase -- koncepce by měla být použitelná i za více let,
+tedy postavená na co nejobecnějších komponentách, u nichž je předpoklad, že
+budou dlouho dostupné v současné podobě nebo podobě plně kompatibilní.
+\item Rozšiřitelnost podporovaných funkcí (je jednou z podmínek udržitelnosti
+koncepce v čase). 
+\item Přijatelná finanční náročnost, a to z důvodu předpokládaného počtu 
+potřebných komponent.
+\item Obousměrná komunikace s řídicím počítačem, schopnost detekovat správnou
+funkčnost modulů.
+\item Nezávislost na proprietárních firemních řešeních (rovněž podmínka
+udržitelnosti v čase, ale i přijatelné finanční náročnosti).
+\item Možnost provozu napodobujícího skutečnou železnici.
+\end{enumerate}
+
+Přestože jsou na trhu k dispozici různé komponenty řídicí elektroniky a 
+potřebných prvků, jsou převážně určeny pro běžné spotřebitele, tj. amatéry 
+pracující v domácích podmínkách, nesplňují tedy některá podstatná kritéria 
+řízení a provozu kolejišť s větším počtem traťových prvků a provozovaných 
+vlakových souprav. Toto významné omezení lze řešit například rozdělením 
+rozsáhlého kolejiště na izolované dostatečně malé oblasti a provozováním 
+nezávislých režimů v každé oblasti (uplatněno například na velmi rozsáhlém 
+kolejišti v Království železnic v Praze, sděleno na odborné exkurzi v roce 
+2015). Zmiňme stručně alespoň vybraná (v praxi dostatečně frekventovaná) 
+řešení:
+
+\pkap Digital Command Control
+
+Digital Command Control \cite{DCC} je pravděpodobně celosvětově nejrozšířenější 
+systém pro digitální řízení modelové železnice. Neexistují studie, které by 
+tento fakt mohly potvrdit, lze to však usuzovat podle množství komponent, jež 
+můžeme vidět na trhu. Jde o otevřený standard vytvořený organizací National 
+Model Railroad Association (NMRA) \cite{NMRA}. Základní vlastnosti: 
+Technologickým prvkem systému je centrála vysílající povelový signál DCC. Ten 
+je jednosměrný, pro získávání informací o stavech prvků v kolejišti se používá 
+druhá sběrnice, tzv. zpětné hlášení. Informace ze sběrnice zpětného hlášení se 
+dostávají do centrály například technologií RailCom, která byla do systému 
+implementována později. Dekodéry vozidel ani traťových prvků nepotvrzují 
+přijetí povelu, což může vést k selhání (nedoručení povelu nebo jeho 
+neprovedení z různých příčin). Schéma ovládání kolejiště pomocí DCC ukazuje
+obr.\,\ref{schemaDCC}.
+\end{multicols}
+
+
+\begin{figure}
+\includegraphics[width=.5\textwidth]{dcc_schema.pdf}
+\caption{Schéma systému DCC použitelného pro domácí kolejiště}% (upraveno podle \cite{DCC})}
+\label{schemaDCC}
+\end{figure}
+
+\hrule
+\begin{multicols}2
+
+Způsob funkce sběrnice zpětného hlášení není podložena žádným standardem, proto
+se vyvinuly různé možnosti: S88 \cite{S88}, RSbus \cite{RSbus} či LocoNET 
+\cite{LocoNET}. Poslední jmenovaná je licencovaná sběrnice společnosti Digitrax
+a její použití je vázáno licenčními poplatky. Umožňuje však oboustrannou 
+komunikaci umožňující i přímo povelovat traťová zařízení, čímž může obcházet
+centrálu signálu DCC.
+
+\pkap BiDiB
+
+Sběrnice BiDiB (BiDirectional Bus) je komunitní sběrnice s otevřeným protokolem
+\cite{BiDiB}. Splňuje některá z uvedných kritérií, jejím limitem je dělení
+celého systému na maximálně 32 desek v jednom segmentu, přičemž některé desky
+mohou být spojovacím článkem do dalšího segmentu. To zapříčiňuje poněkud odlišné
+možnosti adresování, což do návrhu nového systému není žádoucí přebírat.
+
+
+\pkap MTB
+
+Systém MTB \cite{MTB} je provozován jako stávající řešení na kolejištích v laboratoři.
+Jeho zásadní nevýhodou je nemožnost jakéhokoliv dalšího vývoje, je ve vlastnictví
+původních autorů, nesplňuje tedy dvě závažná kritéria uvedená výše: jde
+o proprietární řešení a není předpoklad možnosti časové udržitelnosti (nelze
+přidávat nebo měnit funkce).
+
+Koncept MTB byl navržen pro rozsáhlá kolejiště, lze tedy zcela nepochybně využít
+jeho základních myšlenek jako východiska pro konstrukci novou. 
+
+Ovládání celého kolejiště je zde rozděleno na dvě rozdílné části:
+
+\begin{itemize}
+\item Řízení vozidel -- navazuje na rozšířený systém DCC a umožňuje provozovat
+vozidla, jejichž dekodéry jsou na systém DCC vyrobeny. Protože výrobců vozidel
+s tímto systémem je velké množství a je dostupná rozsáhlá kolekce vozidel, je
+velmi žádoucí, aby tento způsob řízení byl v systému k dispozici.
+\item Řízení příslušenství -- zde se naopak koncepce MTB odklání od firemních
+koncepcí (systém DCC ve firemních řešeních typicky ovládá i příslušenství, jak
+bylo již uvedeno v příslušné sekci).
+
+Oddělení způsobu řízení příslušenství od řízení jízdy umožňuje daleko větší
+rozsah adres zařízení, řídicí signály jízdy a příslušenství spolu nemohou 
+kolidovat (jde o dvě oddělené sběrnice) a lze realizovat více funkcí. Možnou
+nevýhodou je, že celý systém je poněkud složitější a je nezbytné jej
+obsluhovat odpovídajícím softwarem (nestačí jednoduché ruční řízení ovládací
+myší, jak je tomu u běžně komerčně dostupných sestav).
+\end{itemize}
+
+Nad oběma částmi je pak možné vybudovat softwarovou podporu umožňující alespoň 
+částečně simulovat chování zabezpečovacího zařízení na skutečné železnici, což 
+je pro výukové účely laboratoře značná výhoda a zároveň i splnění jednoho z 
+vytyčených kritérií. Řešené úlohy mohou do potřebné míry napodobovat reálný stav 
+a varianty provozu se zachováním základních rysů železniční dopravy.  Komplexní
+schéma zahrnující zmíněné možnosti přináší obr.\,\ref{mtb_schema}.
+
+\end{multicols}
+
+\begin{figure}
+\includegraphics[width=\textwidth]{mtb_schema.pdf}
+\caption{Stav řízení kolejiště v LŘKV před modernizací}
+\label{mtb_schema}
+\end{figure}
+
+\hrule
+\begin{multicols}2
+
+\ppkap Nedostatky současného systému MTB
+
+V podobě, která je komplexně znázorněna na příslušném obrázku, je systém
+schopen řídit i rozsáhlá kolejiště a vzhledem k oddělení řízení vozidel 
+a řízení traťových prvků se tato koncepce jeví jako univerzálně použitelná.
+Schéma popisuje stav využívaný pro ovládání velkého kolejiště v KŽM Brno I
+a zcela identická implementace je vzhledem k udržení kompatibility použita
+i v Laboratoři řízení kolejových vozidel PEF MENDELU. To umožňuje v případě
+potřeby kombinovat moduly Klubu a fakulty, vzájemně využívat know-how a
+udržovat jednotnou formu provozu.
+ 
+Bohužel však část týkající se řízení příslušenství (část MTB) s sebou 
+v současné době nese několik velmi zásadních problémů:
+
+\begin{itemize}
+\item Zastaralá součástková základna -- poslední aktualizace systému byla
+provedena v roce 2007 a v současné době jsou některé použité součástky 
+nedostupné. Instalovaná elektronika vyrobená v minulosti a použitá na
+kolejišti nemá žádnou náhradu. To zcela znemožňuje rozšířit kolejiště o další 
+tratě a stanice, znemožňuje vyměňovat porouchané části elektroniky a využívat 
+elektroniku k dalším (například diagnostickým) účelům.
+
+\item Nevyřešené licenční podmínky -- autoři systému neposkytli Klubu ani
+jinému subjektu zdrojové kódy firmwaru, elektrických schémat a data schémat 
+desek plošných spojů. Nelze tedy provést v podstatě žádnou aktualizaci,
+rozšíření funkcí nebo opravit zjištěné nedostatky.
+
+\item Technické možnosti procesorů -- v době návrhu systému byly dostupné
+procesory s pamětí 2~kB flash, 128~B SRAM. Tato kapacita je již zcela 
+nedostačující, firmware není možné rozšířit a procesorům chybějí některé
+klíčové periferie, například paměť EEPROM.
+\end{itemize}
+
+Pro umožnění v podstatě jakéhokoliv rozvoje laboratoře (rozšíření kolejiště,
+přidání nových funkcí) je zcela nezbytné systém MTB modernizovat (hlavní záměr
+projektu IGA PEF\_TP\_2020004), přičemž byly pro tuto fázi stanoveny 
+následující všeobecné požadavky vyplývající z již uvedených skutečností:
+
+\begin{enumerate}
+\item Nový systém musí být v rozumné míře zpětně kompatibilní se současným 
+řídicím softwarem kolejiště.
+\item Nový systém musí být v rozumné míře zpětně kompatibilní se současným 
+řídicím hardwarem kolejiště.
+\item Nový systém musí být dostatečně dlouho udržitelný (odhadem 20 let).
+\item Řešení nesmí být finančně náročné; má-li být podpora určena pro rozsáhlá
+kolejiště, není možné využívat velké množství drahých komponent.
+\item Komunikace musí zahrnovat potvrzování akcí řídicího počítače, musí být
+detekovatelná správná funkčnost modulů.
+\item Nové funkce a požadavky, jejichž definice se objeví v budoucnu, musí být
+implementovatelné, tj.\,systém musí být dostatečně rozšiřitelný.  
+\end{enumerate}
+
+Zásadním doporučením rovněž je, že nový systém musí vzniknout jako otevřené
+řešení, tj.\,hardwarové komponenty jako open hardware, veškerý použitý software
+jako open source. 
+
+\kap Návrh řešení
+
+V návrhu řešení vycházíme ze systému MTB, jde tedy o komponenty, které jsou
+na obr.\,\ref{mtb_schema} označeny jako \uv{MTB-USB}, \uv{MTB-UNI}, \uv{MTB-TTL}
+a \uv{MTB-UNIm}. Požadavky na řešení uvedené výše je však potřebné
+specifikovat detailněji. V následujícím textu budou zmíněny zejména rozdíly
+proti stávajícímu stavu.
+
+\pkap Okolí systému
+
+Na jedné straně systém komunikuje s traťovými zařízeními v kolejišti 
+(přestavníky výhybek, návěstidla, úseky, osvětlení apod.), na druhé s 
+počítačem přes rozhraní USB.
+
+Pro komunikaci s hardwarem kolejiště se doposud užívaly dva typy výstupů --
+digitální binární (pro všechny dvoustavové případy) a tzv.\,S-COM \cite{S-COM}.
+K těmto dvěma pak v novém systému přibývá tzv.\,kmitavý výstup (digitální
+signál s frekvencí v jednotkách Hz) určený pro indikační účely a pro speciální
+zařízení pro rozvěšování souprav (rozpojovače v kolejišti).\footnote{Podrobně
+se problémem rozvěšování souprav zabývala ve své práci Z.\,Galieva 
+\cite{DP-Zarina}.} 
+
+Koncepčně bylo rozhodnuto, že nebudou podporovány analogové vstupy a výstupy
+nebo výstupy s pulzně šířkovou modulací. V současném systému jsou používány 
+dvě varianty, UNI a UNIm, které se liší podporou infračervených čidel. Pro
+implementaci požadavků na jednoduchost a nízkou cenu však je vhodné vytvořit
+pouze jednu univerzální, sériově produkovatelnou variantu, k níž pak lze
+podle potřeby připojit jakýkoliv rozšiřující modul umožňující připojení zcela
+specifických a v této chvíli neznámých zařízení. Oproti stávajícímu stavu tedy
+byl návrh zjednodušen tak, že každý pin může mít tři varianty -- binární, S-COM
+a kmitavý. Podpora stávajících (a zcela nezbytných) infračervených čidel pro
+detekci pozice vlaku bude vyřešena přídavným modulem.
+
+Na druhé straně systém komunikuje s řídicím softwarem v serveru. Pro toto 
+řízení je nyní používán program hJOP \cite{hJOP} připojený ke kolejišti pomocí 
+dynamicky linkované knihovny s definovaným API. Novým požadavkem ovšem je 
+řízení typu multi-master, aby jednotlivé prvky byly řízeny výhradně počítačem, 
+protože na sběrnici pak může být připojeno více programů (řízení pouličního 
+osvětlení, řízení lokální tramvajové dopravy apod.).
+
+\pkap Další vylepšení
+
+V souladu s některými uvedenými rámcovými požadavky by nový systém měl být 
+schopen na rozdíl od současného stavu detekovat moduly, které na sběrnici 
+přibudou za chodu (nikoliv jen při startu systému), což bude umožněno mírným 
+zjednodušením postupu práce se sběrnicí. Problémem ve stejné kategorii je 
+umožnění snadné detekce nefunkčního modulu (například při výpadku napájení, 
+rozpojení konektorů spojujících části kolejiště apod.). Inovací oproti 
+současnému stavu se v této souvislosti jeví implementace potvrzování příkazů,
+což umožní uvedené funkce.
+
+Pro snadnou identifikaci konkrétního modulu v kolejišti (jednotlivé moduly 
+jsou rozmístěny ze spodní strany kolejiště v místech, kde se nacházejí 
+odpovídají zařízení) by mělo být možné na něm zapnout z řídicího počítače 
+indikační LED.
+
+Aktualizace firmwaru by měla být umožněna přímo po sběrnici. Vzhledem ke
+značnému počtu modulů na rozsáhlejším kolejišti (stovky) je velmi náročné
+aktualizovat firmware ručně po jednom modulu. Použitím pokročilejších 
+procesorů by tato operace měla být automaticky dosažitelná a mohla by 
+umožnit aktualizaci na celém kolejišti naráz. To s sebou nese i vyloučení
+chyb a nedodělků včetně vyloučení časových posunů při ručních aktualizacích.
+
+\pkap Koncept řešení
+
+Implementace vytyčených požadavků vynucující jinou činnost sběrnice vyžaduje
+nový návrh spojovacího článku MTB-USB. Zde se zpětná kompatibilita s původní
+verzí této desky nemusí striktně dodržet, protože tato deska je v celém 
+kolejišti pouze jedna a její kompletní výměna není technicky ani finančně
+příliš náročná.
+
+Místo současných několika typů modulů MTB bude navržen jeden typ, na jehož
+každém pinu budou libovolně nastavitelné tři možnosti: binární,
+S-COM a kmitavý režim. K tomuto univerzálnímu modulu bude navržena rozšiřující
+deska pro zapojení infračervených čidel, bez nichž nelze kolejiště provozovat.
+Univerzální modul MTB bude postaven na moderních součástkách, u nichž je ale
+předpoklad jejich dlouhodobé dosažitelnosti.
+
+Pro usnadnění výměny současných modulů bude návrh prováděn s ohledem na
+určitou kompatibilitu: místo původních procesorů se do stejné desky nasadí
+procesory nové umožňující pracovat na nové sběrnici. Procesory jsou umístěny
+v paticích, jejich fyzická výměna není technologicky náročná.
+
+Konfigurace modulů bude trvale uložena v procesorech modulu. Je to z důvodu 
+rychlejšího startu, neboť okamžitě po zapnutí napájecího napětí je modul 
+schopen funkce. Udržování autoritativní verze však bude řešeno na počítači, 
+kde lze řešit elegantně a daleko snadněji veškeré ukládání, zálohování a 
+verzování konfigurací.
+
+Požadavek na řízení typu multi-master bude vyřešen způsobem, že MTB-USB
+bude na straně počítače komunikovat sice s jednou aplikací, ale více 
+ovládacích programů se implementuje na úrovni navazujícího softwaru. Tím 
+odpadá nutnost připojovat MTB-USB k počítači rozhraním, které podporuje více
+připojených zařízení, což by bylo spojeno s dalšími problémy. MTB-USB se
+k počítači připojí pomocí virtuálního sériového portu, vznikne nová aplikace
+MTB Daemon, která se na jedné straně připojí k MTB-USB a na druhé straně
+vystaví JSON TCP server s jednoduchým API, k němuž se bude možné připojit
+z více programů psaných v různých jazycích. Tato funkcionalita mimo jiné
+umožňuje práci studentů v Laboratoři při programování vlastních jednoduchých
+aplikací ovládajících kolejiště (projekt IP-B č.\,8.1.17 z roku 2018).
+
+\pkap Sběrnice MTBbus
+
+Sběrnice je navržena od základů znovu. Důvodem je jednak řada podstatných změn
+oproti stávajícímu stavu, a také nutnost vyřešit licenční problémy (původní
+autoři nejeví o jakoukoliv komunikaci zájem).
+
+Po hardwarové stránce je zachován standard RS485. Podporovanými komunikačními
+rychlostmi zůstávají tři -- 38\,400~Bd, 57\,600~Bd a 115\,200~Bd. Nižší rychlost
+není potřeba, při maximální rychlosti pak dochází ke cca 20 skenům každého
+modulu za sekundu při 50 modulech na sběrnici, což je pro účely splnění 
+zabezpečovacích funkcí zcela dostatečné.
+
+Princip komunikace je založen na periodickém dotazování všech modulů na
+sběrnici, každý modul pak odpovídá právě jednou zprávou. Tím je vždy potvrzeno,
+že modul zprávu přijal a komunikuje. Moduly, které jsou aktivní, jsou dotazovány
+častěji než neaktivní, aby se snižovala latence. Neaktivní moduly ale musí
+být zahrnuty do dotazů také, aby se včas dalo zjistit, zda byly připojeny.
+
+Návrh komunikačního protokolu předpokládá zprávy složené z následujících
+částí:
+
+\begin{itemize}
+\item Adresa modulu -- 1~B, poskytuje adresový prostor pro 255 modulů, který
+se jeví jako dostatečný.
+\item Délka zprávy -- oproti současnému stavu, kdy maximální délka mohla být
+7~B, byla délka datové části podstatně navýšena, a to až na 120~B, což umožňuje posílat
+kromě běžných zpráv také firmware pro aktualizaci modulů.
+\item Kód zprávy -- bajt definující význam zprávy (přesná specifikace je 
+dostupná online \url{https://github.com/kmzbrnoI/mtbbus-protocol}.
+\item Datová část zprávy -- až 120~B dat.
+\item Kontrolní součet -- proti současnému stavu, kdy se vypočítává pouze XOR
+zprávy, se v nové verzi počítá kontrolní součet CRC-16. Pro větší délky zpráv
+nového návrhu se jeví tento typ kontrolního součtu jako vhodnější.
+\end{itemize}
+
+Specifikace protokolu MTBbus nové verze je dvouvrstvá -- protokol definuje
+typy zpráv, ale data jsou definována u některých zpráv až konkrétními typy
+modulů MTB. Zde je definován formát dat vstupů a výstupů, formát konfigurace 
+modulu a způsob adresování a data paměti pro aktualizaci firmwaru.
+
+Zvláštní pozornost v návrhu je věnována aktualizaci firmwaru modulů MTB. 
+Procedura aktualizace firmwaru je podrobně popsána online v dokumentu
+\url{https://github.com/kmzbrnoI/mtbbus-protocol/blob/master/workflows.md}.
+Aktualizace může probíhat za plného provozu sběrnice, což je velká výhoda
+zejména v případě, že je přidán nebo vyměněn modul s jinou původní verzí
+firmwaru.
+
+Přepis paměti typu flash v modulech MTB může probíhat pouze z bootloaderu.
+Aktualizační protokol rebootuje procesor do tohoto programu. Protože
+bootloader není možné provést aktualizovat přes sběrnici MTBbus, musí se jednat
+o malý a dobře odzkoušený kus firmwaru, který nebude třeba přehrávat a bude
+se do procesoru nahrávat přímým programováním modulu.
+
+Změny v koncepci řešení řídicí elektroniky kolejiště jsou rámcově zachyceny
+na obr.\,\ref{new_mtb_schema}. Detaily technického řešení a hardwarové 
+implementace popisuje Horáček (2021, kap.\,5). 
+
+Úspornou variantou modernizace je možnost ponechání původních DPS modulů
+MTB-UNI s tím, že se původní procesor vymění a nahradí za nový, veškeré
+ostatní součástky, kabeláž a mechanické řešení zůstává. Protože neexistuje
+nyní nový procesor, který by odpovídal zapojení vývodů původního procesoru,
+vznikla přídavná deska nasouvaná do patice původního procesoru. Na přídavné
+desce je nový procesor v provedení SMD s potřebnými dalšími součástkami.
+Prostou výměnou procesoru v původní patici za novou desku je vytvořen nový
+modul MTB-UNI. 
+
+Kromě toho bylo potřeba doplnit podporu infračervených čidel, aby se nové 
+řešení dalo nasadit na současné kolejiště, kde jsou tato čidla používána.
+Vznikla rozšiřující deska nazvaná IRdet umožňující připojení až 8 IR čidel
+a její výstupy lze připojit na vstupy modulu MTB-UNI. Tyto výstupy však lze
+používat i pro jiné účely (například signalizace v řídicích pultech apod.).
+Podobnou cestou bude možné v budoucnu řešit připojování a ovládání libovolného
+technického vybavení tratě, které nebude možné přímo připojit na binární,
+S-COM nebo kmitavé vstupy/výstupy nových modulů MTB-UNI.
+\end{multicols}
+
+\begin{figure}
+\includegraphics[width=.5\textwidth]{new_mtb_schema.pdf}
+\caption{Modernizovaná část řízení kolejiště v LŘKV}
+\label{new_mtb_schema}
+\end{figure}
+
+\hrule
+\begin{multicols}2
+
+\pkap Softwarová podpora
+
+V rámci řešení vznikly dvě počítačové aplikace -- MTB Daemon a knihovna
+hJOP MTB Network RCS Library.
+
+MTB Daemon zajišťuje připojení k modulu MTB-USB a umožňuje jeho ovládání více
+různým aplikacím prostřednictvím TCP serveru. Komunikace probíhá textově,
+kódování UTF-8, formát JSON. Programovacím jazykem byl C++17 s frameworkem Qt,
+což umožňuje multiplatformní řešení; kompilace je možná jak pro OS typu Linux,
+tak i OS typu Windows.
+
+Knihovna hJOP MTB Network RCS Library propojuje stávající řídicí systém
+kolejiště hJOP a MTB Daemon. 
+
+\kap Diskuse
+
+Implementace nového systému MTB a s ním souvisejících hardwarových a softwarových
+komponent představuje řešení nezbytné podmínky dalšího rozvoje kolejiště
+v Laboratoři řízení kolejových vozidel. Jsou v plánu rozšíření o další
+stanici včetně lokomotivního depa, což umožní zvýšit provozní možnosti a řešit
+další možné dopravní situace včetně nejrůznějších prvků zabezpečení a
+plnění grafikonu vlakové dopravy.
+
+Mírně obohaceny jsou dále možnosti řízení kolejiště softwarovými prvky, které 
+mohou vytvářet studenti v rámci předmětů spojených s algoritmizací a
+programovacími technikami, a to v programovacích jazycích nezávislých na
+implementaci softwarových komponent kolejiště. Kromě toho byl rozšířen prostor
+pro studenty specializovaných předmětů a tvůrce závěrečných prací, kteří mohou
+vytvářet další nadstavby řídicího softwaru a řešit náročnější úkoly řízení
+vlakového provozu. 
+
+Ve srovnání se systémy, které jsou dostupné komerčně, má navržená a realizovaná
+implementace velkou výhodu v otevřenosti hardwarové i softwarové části, lze
+tedy bez omezení využívat části potřebné pro různé uživatele. Kromě toho se
+cenově pohybuje níže než komponenty dostupné pro běžná domácí kolejiště.
+Zde se objevuje nový prostor využití, na který jsou jednotlivé komponenty již
+připraveny, ale přizpůsobení komerčním softwarovým systémům zatím řešeno nebylo.
+
+\kap Závěr
+
+Modernizovaný systém byl realizován a byl nasazen na modulové kolejiště
+měřítka H0, které je provozováno v rámci Laboratoře řízení kolejových vozidel.
+
+V budoucnu lze dále uvažovat o možnosti podpory vyšších rychlostí sběrnice,
+případně automatickou detekci nastavené rychlosti důležitou při připojování
+dalších modulů (nebo jejich výměně). Zajímavou možností by také mohla být
+rozšiřující elektronika provádějící retranslaci dat sběrnice bezdrátovým
+spojem pro ovládání částí kolejiště, které jsou z prostorových a 
+architektonických důvodů fyzicky odděleny od řídicího počítače.
+
+
+\npkap Poděkování
+
+Modernizace systému MTB v Laboratoři řízení kolejových vozidel byla financována
+z prostředků týmového projektu IGA č.\,PEF\_TP\_2020004 s názvem \uv{Inovace 
+elektronického řízení modelového kolejiště}. K modernizaci zásadně přispěla
+i diplomová práce Jana Horáčka \cite{DP-Honza}.
+
+\kap Literatura
+
+\def\bibitem#1{\item [--]\label{#1}}
+\begin{enumerate}
+\bibitem{DP-Zarina}Galieva, Z. Automatizace objíždění souprav na modelovém
+kolejišti. Diplomová práce. Vedoucí práce: Jiří Rybička. MENDELU, 2020.
+\bibitem{DP-Honza}Horáček, J. Návrh a implementace nového protokolu
+sběrnice MTBbus. Diplomová práce. Vedoucí práce: Zdeněk Matěj. MU v Brně, 2021.
+\end{enumerate}
+
+\end{multicols}
+\end{document}
