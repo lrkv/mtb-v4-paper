@@ -121,7 +121,7 @@ is used to provide the information. The information from the vehicle goes via
 the RailCom protocol to the RailCom (DCC Wiki, 2021b)\cite{RailCom} detector, and from there 
 via the bus for feedback to the command station. The command station can be 
 connected to a computer over the communication bus -- throttle bus (LocoNET, XPressNET). 
-Neither vehicle nor track element decoders do not acknowledge 
+Neither vehicle nor track element decoders acknowledge 
 receiving of the command, which may lead to a failure (non-delivery of the 
 command or failure to execute the command for various reasons). Schematic of 
 DCC track control is shown in Figure \ref{DCC}. 
