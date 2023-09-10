@@ -2,20 +2,20 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="210mm"
    height="297mm"
    viewBox="0 0 210 297"
    version="1.1"
    id="svg59"
-   inkscape:version="0.92.1 r15371"
-   sodipodi:docname="new_mtb_schema.svg">
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="new_mtb_schema.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <defs
      id="defs53">
     <marker
@@ -25,12 +25,16 @@
        refX="0"
        id="marker6794"
        style="overflow:visible"
-       inkscape:isstock="true">
+       inkscape:isstock="true"
+       viewBox="0 0 17.773854 10.156488"
+       markerWidth="17.773853"
+       markerHeight="10.156488"
+       preserveAspectRatio="xMidYMid">
       <path
          inkscape:connector-curvature="0"
          id="path6792"
          d="M 0,0 5,-5 -12.5,0 5,5 Z"
-         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
          transform="matrix(0.8,0,0,0.8,10,0)" />
     </marker>
     <marker
@@ -40,12 +44,16 @@
        refX="0"
        id="marker6650"
        style="overflow:visible"
-       inkscape:isstock="true">
+       inkscape:isstock="true"
+       viewBox="0 0 17.773854 10.156488"
+       markerWidth="17.773853"
+       markerHeight="10.156488"
+       preserveAspectRatio="xMidYMid">
       <path
          inkscape:connector-curvature="0"
          id="path6648"
          d="M 0,0 5,-5 -12.5,0 5,5 Z"
-         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
          transform="matrix(-0.8,0,0,-0.8,-10,0)" />
     </marker>
   </defs>
@@ -56,17 +64,20 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4"
-     inkscape:cx="786.23267"
-     inkscape:cy="689.38019"
+     inkscape:zoom="1.3499085"
+     inkscape:cx="316.31772"
+     inkscape:cy="533.36946"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1920"
-     inkscape:window-height="1137"
-     inkscape:window-x="1912"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1" />
+     inkscape:window-height="1062"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:showpageshadow="2"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1" />
   <metadata
      id="metadata56">
     <rdf:RDF>
@@ -75,7 +86,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -89,10 +100,13 @@
        height="13.096207"
        x="46.050613"
        y="69.07502"
-       style="fill:none;stroke:#000000;stroke-width:0.26458332" />
+       style="fill:none;stroke:#000000;stroke-width:0.26458332"
+       inkscape:export-filename="rect3680.pdf"
+       inkscape:export-xdpi="387.71"
+       inkscape:export-ydpi="387.71" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.52777767px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       style="font-style:normal;font-weight:normal;font-size:3.52778px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
        x="47.687996"
        y="74.635902"
        id="text10"><tspan
@@ -100,11 +114,11 @@
          id="tspan8"
          x="47.687996"
          y="74.635902"
-         style="stroke-width:0.26458332">computer</tspan><tspan
+         style="stroke-width:0.264583">computer</tspan><tspan
          sodipodi:role="line"
          x="47.687996"
          y="79.045624"
-         style="stroke-width:0.26458332"
+         style="stroke-width:0.264583"
          id="tspan6782">(server)</tspan></text>
     <rect
        y="83.79641"
@@ -117,15 +131,15 @@
        id="text6758"
        y="77.916481"
        x="114.95347"
-       style="font-style:normal;font-weight:normal;font-size:2.82222223px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       style="font-style:normal;font-weight:normal;font-size:2.82222px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
        xml:space="preserve"><tspan
-         style="stroke-width:0.26458332"
+         style="stroke-width:0.264583"
          y="77.916481"
          x="114.95347"
          id="tspan6754"
          sodipodi:role="line">accesories control</tspan><tspan
          id="tspan6756"
-         style="stroke-width:0.26458332"
+         style="stroke-width:0.264583"
          y="81.44426"
          x="114.95347"
          sodipodi:role="line">(MTB system)</tspan></text>
@@ -134,7 +148,7 @@
        inkscape:connector-curvature="0"
        id="path6768"
        d="M 113.41556,91.814498 V 75.511056 H 65.574322"
-       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+       style="fill:none;stroke:#000000;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#marker6794);marker-end:url(#marker6650)" />
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.20257425"
        y="91.97905"
@@ -144,32 +158,27 @@
        id="rect6770" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:2.82222223px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="107.22256"
-       y="94.222107"
+       style="font-style:normal;font-weight:normal;font-size:2.82222px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583;text-anchor:middle;text-align:center"
+       x="113.87056"
+       y="96.24028"
        id="text6776"><tspan
          sodipodi:role="line"
-         id="tspan6772"
-         x="107.22256"
-         y="94.222107"
-         style="stroke-width:0.26458332">new</tspan><tspan
-         sodipodi:role="line"
-         x="107.22256"
-         y="97.749886"
-         style="stroke-width:0.26458332"
+         x="107.78726"
+         y="96.24028"
+         style="stroke-width:0.264583;text-anchor:middle;text-align:center"
          id="tspan195">MTB-USB</tspan><tspan
          id="tspan6774"
          sodipodi:role="line"
-         x="107.22256"
-         y="101.27766"
-         style="stroke-width:0.26458332">interface</tspan></text>
+         x="107.78726"
+         y="99.768059"
+         style="stroke-width:0.264583;text-anchor:middle;text-align:center">v4</tspan></text>
     <text
        id="text6780"
        y="73.171707"
        x="67.951271"
-       style="font-style:normal;font-weight:normal;font-size:2.82222223px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       style="font-style:normal;font-weight:normal;font-size:2.82222px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
        xml:space="preserve"><tspan
-         style="stroke-width:0.26458332"
+         style="stroke-width:0.264583"
          y="73.171707"
          x="67.951271"
          id="tspan6778"
@@ -182,7 +191,7 @@
        sodipodi:nodetypes="cc" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:2.82222223px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       style="font-style:normal;font-weight:normal;font-size:2.82222px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
        x="116.22054"
        y="109.05338"
        id="text6858"><tspan
@@ -190,12 +199,12 @@
          id="tspan6856"
          x="116.22054"
          y="109.05338"
-         style="stroke-width:0.26458332">MTB bus </tspan><tspan
+         style="stroke-width:0.264583">MTBbus </tspan><tspan
          sodipodi:role="line"
          x="116.22054"
          y="112.58116"
-         style="stroke-width:0.26458332"
-         id="tspan6860">RS 485</tspan></text>
+         style="stroke-width:0.264583"
+         id="tspan6860">RS485</tspan></text>
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.21227089"
        y="107.33459"
@@ -354,7 +363,7 @@
        style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:2.82222223px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       style="font-style:normal;font-weight:normal;font-size:2.82222px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
        x="77.934189"
        y="167.37384"
        id="text7122"><tspan
@@ -362,41 +371,41 @@
          id="tspan7120"
          x="77.934189"
          y="167.37384"
-         style="stroke-width:0.26458332">16 inputs + 16 outputs </tspan><tspan
+         style="stroke-width:0.264583">16 inputs + 16 outputs </tspan><tspan
          sodipodi:role="line"
          x="77.934189"
          y="170.90161"
-         style="stroke-width:0.26458332"
+         style="stroke-width:0.264583"
          id="tspan7150">per module</tspan><tspan
          sodipodi:role="line"
          x="77.934189"
          y="174.4294"
-         style="stroke-width:0.26458332"
+         style="stroke-width:0.264583"
          id="tspan7148">up to 255</tspan><tspan
          sodipodi:role="line"
          x="77.934189"
          y="177.95717"
-         style="stroke-width:0.26458332"
+         style="stroke-width:0.264583"
          id="tspan7124">modules</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:2.82222223px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="91.469574"
-       y="133.98735"
+       style="font-style:normal;font-weight:normal;font-size:2.82222px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583;text-anchor:middle;text-align:center"
+       x="97.677757"
+       y="134.40665"
        id="text7132"><tspan
          sodipodi:role="line"
-         id="tspan7130"
-         x="91.469574"
-         y="133.98735"
-         style="stroke-width:0.26458332">new</tspan><tspan
+         x="91.717224"
+         y="134.40665"
+         style="stroke-width:0.264583;text-anchor:middle;text-align:center"
+         id="tspan215">MTB-UNI</tspan><tspan
          sodipodi:role="line"
-         x="91.469574"
-         y="137.51512"
-         style="stroke-width:0.26458332"
-         id="tspan215">MTB-UNI</tspan></text>
+         x="91.717224"
+         y="137.93442"
+         style="stroke-width:0.264583;text-anchor:middle;text-align:center"
+         id="tspan6178">v4</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.17499995px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
        x="-161.3972"
        y="56.551785"
        id="text7140"
@@ -405,54 +414,53 @@
          id="tspan7138"
          x="-161.3972"
          y="56.551785"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.17499995px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.26458332">all accessories</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.175px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.264583">all track-side accessories</tspan><tspan
          sodipodi:role="line"
          x="-161.3972"
          y="60.520535"
-         style="font-size:3.17499995px;stroke-width:0.26458332"
+         style="font-size:3.175px;stroke-width:0.264583"
          id="tspan7144">(switches, semaphores,</tspan><tspan
          sodipodi:role="line"
          x="-161.3972"
          y="64.489281"
-         style="font-size:3.17499995px;stroke-width:0.26458332"
+         style="font-size:3.175px;stroke-width:0.264583"
          id="tspan7146">crossings, lights, disconnectors, ...) </tspan><tspan
          sodipodi:role="line"
          x="-161.3972"
          y="68.458031"
-         style="font-size:3.17499995px;stroke-width:0.26458332"
          id="tspan7142" /></text>
     <text
        id="text221"
-       y="114.40986"
-       x="91.469574"
-       style="font-style:normal;font-weight:normal;font-size:2.82222223px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       y="115.12988"
+       x="97.677757"
+       style="font-style:normal;font-weight:normal;font-size:2.82222px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583;text-anchor:middle;text-align:center"
        xml:space="preserve"><tspan
-         style="stroke-width:0.26458332"
-         y="114.40986"
-         x="91.469574"
-         id="tspan217"
-         sodipodi:role="line">new</tspan><tspan
          id="tspan219"
-         style="stroke-width:0.26458332"
-         y="117.93763"
-         x="91.469574"
-         sodipodi:role="line">MTB-UNI</tspan></text>
+         style="stroke-width:0.264583;text-anchor:middle;text-align:center"
+         y="115.12988"
+         x="91.717224"
+         sodipodi:role="line">MTB-UNI</tspan><tspan
+         style="stroke-width:0.264583;text-anchor:middle;text-align:center"
+         y="118.65766"
+         x="91.717224"
+         sodipodi:role="line"
+         id="tspan6174">v4</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:2.82222223px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="91.469574"
-       y="154.76756"
+       style="font-style:normal;font-weight:normal;font-size:2.82222px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583;text-anchor:middle;text-align:center"
+       x="97.677757"
+       y="155.20601"
        id="text227"><tspan
          sodipodi:role="line"
-         id="tspan223"
-         x="91.469574"
-         y="154.76756"
-         style="stroke-width:0.26458332">new</tspan><tspan
+         x="91.717224"
+         y="155.20601"
+         style="stroke-width:0.264583;text-anchor:middle;text-align:center"
+         id="tspan225">MTB-UNI</tspan><tspan
          sodipodi:role="line"
-         x="91.469574"
-         y="158.29533"
-         style="stroke-width:0.26458332"
-         id="tspan225">MTB-UNI</tspan></text>
+         x="91.717224"
+         y="158.73378"
+         style="stroke-width:0.264583;text-anchor:middle;text-align:center"
+         id="tspan6182">v4</tspan></text>
     <rect
        id="rect229"
        width="15.540194"
@@ -465,15 +473,14 @@
        id="text241"
        y="136.06622"
        x="74.627663"
-       style="font-style:normal;font-weight:normal;font-size:2.82222223px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       style="font-style:normal;font-weight:normal;font-size:2.82222px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
        xml:space="preserve"><tspan
-         style="stroke-width:0.26458332"
+         style="stroke-width:0.264583"
          y="136.06622"
          x="74.627663"
          id="tspan237"
          sodipodi:role="line">IRdet</tspan><tspan
          id="tspan239"
-         style="stroke-width:0.26458332"
          y="139.59399"
          x="74.627663"
          sodipodi:role="line" /></text>
