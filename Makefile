@@ -9,7 +9,7 @@ DATA=$(wildcard data/*)
 all: paper_en.pdf clean
 
 %.pdf: %.lau $(DATA)
-	# $(PDFLATEX) -interaction=batchmode $< # The initial typesetting.
+	$(PDFLATEX) -interaction=batchmode $< # The initial typesetting.
 	texfot $(PDFLATEX) $< # The final typesetting, now also with index.
 
 clean:
