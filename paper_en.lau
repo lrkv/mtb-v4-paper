@@ -420,7 +420,8 @@ oscillation mode. The \textit{MTB-UNI v4}\footnote{
 \url{https://github.com/kmzbrnoI/mtb-uni-4-ele},
 \url{https://github.com/kmzbrnoI/mtb-uni-4-fw}
 } universal module will be built on modern components, but with the expectation
-of long-term availability.
+of long-term availability. MTB-UNI v4 is based on ATmega128A MCU, firmware is
+programmed in C.
 
 The configuration of the modules will be permanently stored in the module
 processors. This is necessary for example to store the communication speed of
@@ -440,7 +441,7 @@ such circuit is a crowbar circuit (Electronics notes, 2021).
 \pkap MTB-2-AVR
 
 A cost-saving upgrade option was developed to keep the original MTB-UNI v2 modules, with
-the original processor being replaced with a new one, all other components,
+the original processor being replaced with a new one (ATmega328P), all other components,
 cabling and mechanical parts remain. As there is not a new processor available that
 matches the pinout of the original processor, an add-on \textit{MTB-2-AVR} board\footnote{
 \url{https://github.com/kmzbrnoI/mtb-2-avr-pcb},
@@ -468,6 +469,9 @@ requires a new design of the \textit{MTB-USB v4} module\footnote{
 the original MTB-USB v2 board does not have to be strictly adhered to, as
 this board is only one throughout track and its complete replacement is neither
 technically nor financially too demanding.
+
+PCB was designed in open-source software KiCad, design is based on STM32 MCU
+STM32F103, firmware is programmed in plain C.
 
 \end{multicols}
 
