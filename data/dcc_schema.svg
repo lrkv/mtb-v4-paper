@@ -117,9 +117,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.1029425"
-     inkscape:cx="310.98628"
-     inkscape:cy="310.07961"
+     inkscape:zoom="1.1313347"
+     inkscape:cx="68.061203"
+     inkscape:cy="401.29592"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -251,15 +251,20 @@
        id="rect3718" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:2.82222px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="26.636787"
-       y="64.121086"
+       style="font-style:normal;font-weight:normal;font-size:2.11667px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="29.723944"
+       y="62.056629"
        id="text3726"><tspan
          sodipodi:role="line"
          id="tspan3724"
-         x="26.636787"
-         y="64.121086"
-         style="stroke-width:0.264583">trafo</tspan></text>
+         x="29.723944"
+         y="62.056629"
+         style="font-size:2.11667px;text-align:center;text-anchor:middle;stroke-width:0.264583">power</tspan><tspan
+         sodipodi:role="line"
+         x="29.723944"
+         y="64.702469"
+         style="font-size:2.11667px;text-align:center;text-anchor:middle;stroke-width:0.264583"
+         id="tspan496">supply</tspan></text>
     <rect
        id="rect3728"
        width="10.871646"
@@ -269,15 +274,20 @@
        style="fill:none;stroke:#000000;stroke-width:0.156115" />
     <text
        id="text3732"
-       y="63.932091"
-       x="90.906746"
-       style="font-style:normal;font-weight:normal;font-size:2.82222px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       y="61.867634"
+       x="93.993904"
+       style="font-style:normal;font-weight:normal;font-size:2.11667px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
        xml:space="preserve"><tspan
-         style="stroke-width:0.264583"
-         y="63.932091"
-         x="90.906746"
+         style="font-size:2.11667px;text-align:center;text-anchor:middle;stroke-width:0.264583"
+         y="61.867634"
+         x="93.993904"
          id="tspan3730"
-         sodipodi:role="line">trafo</tspan></text>
+         sodipodi:role="line">power</tspan><tspan
+         style="font-size:2.11667px;text-align:center;text-anchor:middle;stroke-width:0.264583"
+         y="64.513474"
+         x="93.993904"
+         sodipodi:role="line"
+         id="tspan548">supply</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:2.82222px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
