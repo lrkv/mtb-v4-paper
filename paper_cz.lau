@@ -1,3 +1,6 @@
+% WARNING: this document is outdated!
+% Trunk version is paper_en.lau.
+
 \documentclass{article}
 \usepackage{xltxtra, polyglossia,url,multicol}
 \setdefaultlanguage{czech}
