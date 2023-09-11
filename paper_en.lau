@@ -66,10 +66,10 @@ program control of technological units and consequently programming in general.
 It is also used for thesis work on various technical aspects
 of operation (automatic train diversion, shuttle operation of motorised passenger
 trains, etc.). The track represents a digitally controlled technological unit,
-whose design has been adapted to the standards used by the Model Railways Club
+whose design has been adapted to the standards used by the Model Railway Club
 Brno I, in whose cooperation the laboratory was created and is operated.
 
-\kap Overview of the current state
+\kap Current state
 
 Digital control of a relatively large track requires approaches that are
 different from the controlling of a small \uv{home} tracks. The basic criteria
@@ -84,8 +84,8 @@ with several types of electric interfaces.
 \item Sustainability over time -- the concept should be usable over several decades,
 i.e., built on the generic components that are expected to be available for a
 long time in their current or compatible form.
-\item Extensibility of supported functions -- new types of inputs and outputs could
-be added, new types of modules could be added.
+\item Extensibility of supported functions -- new types of modules could be
+added in future.
 \item Acceptable financial demandingness.
 \item Two-way communication with the control computer, ability to detect the correct
 functionality of modules.
@@ -96,37 +96,38 @@ over time, but also for acceptable financial requirements).
 
 Although various electronic control components are available on the market,
 they are mostly intended for the general consumer, i.e. amateurs working in
-domestic conditions, and therefore usually do not meet some of the essential
-criteria defined above.
+domestic conditions, and therefore usually do not meet some of the criteria
+defined above.
 
 Let us briefly mention in practice frequent solutions.
 
 \pkap Digital Command Control
 
-The Digital Command Control (NMRA, 2021)\cite{DCC} is probably the most widely
-used system for digital control of model railways. There are no studies to
-confirm this, but it can be inferred from the number of components we see
-on the market. It is an open standard created by the National Model Railroad
-Association (\url{nmra.org}). DCC unifies controlling of both track-side and
-mobile units.
+The Digital Command Control (\textit{DCC}) (NMRA, 2021)\cite{DCC} is probably
+the most widely used system for digital control of model railways. There are no
+studies to confirm this, but it can be inferred from the number of components
+we see on the market. DCC is an open standard created by the National Model
+Railroad Association (\url{nmra.org}). DCC unifies controlling of both
+track-side and mobile units.
 
 Basic properties: main element of the system is the \textit{command station}
 transmitting DCC signal to control train movement and track accessories. The
-signal was designed as unidirectional, to obtain information about the status of the
+signal was designed as unidirectional, to obtain status of the
 elements in the track a second bus, called \textit{feedback bus}, is used. The
-bus is usually controlled by command station, which inquiries feedback modules
-for data. The command station can be connected to a computer over the
-communication bus -- \textit{throttle bus} (e.g. LocoNET, XPressNET). In current
+bus is controlled by the command station, which inquiries feedback modules
+for data. The command station can be connected to a computer over another
+communication bus -- \textit{throttle bus} (e.g. LocoNET, XpressNET). In the current
 state-of-the-art deployments, neither vehicle nor track-side decoders
-acknowledge receiving of the DCC command, which may lead to a failure
-(non-delivery of the command or failure to execute the command for various
-reasons). Schematic of DCC track control is shown in Figure \ref{schemaDCC}.
+acknowledge receiving of the DCC command to the command station, which may lead
+to a failure (non-delivery of the command or failure to execute the command for
+various reasons). Schematic of DCC track control is shown in Figure
+\ref{schemaDCC}.
 \end{multicols}
 
-
-\begin{figure}
+\begin{figure}[ht]
+\center
 \includegraphics[width=.5\textwidth]{data/dcc_schema}
-\caption{Schematic of a DCC system applicable to a domestic track.
+\caption{Typical schematic of a DCC system.
 Modified according to Wikipedia (2021)\cite{DCC-wiki}}
 \label{schemaDCC}
 \end{figure}
@@ -137,42 +138,37 @@ Modified according to Wikipedia (2021)\cite{DCC-wiki}}
 There is no standard for how the feedback bus works, therefore various
 possibilities have been developed: S88 (OpenDCC, 2021)\cite{S88}, RSbus
 (Pras, 2021)\cite{RSbus} or LocoNET (DCC Wiki, 2021a)\cite{LocoNET}. The latter
-is a licensed bus from Digitrax and its use is subject to licensing fees.
+is a licensed bus created by Digitrax and its full use is subject to licensing fees.
 However, it supports two-way communication, allowing direct commanding of
 track devices without the need for DCC signal.
 
-Typical limitation of the DCC system is the relatively small number of
-controlled elements. Big railways usually address this issue by dividing the
+Typical limitation of the DCC system is a relatively small maximum number of
+feedback modules. Big railways usually address this issue by dividing the
 track into sufficiently small isolated areas and operating independent modules in
 each area (applied, for example, to very large track in the Railway Kingdom in
 Prague, presented on professional excursion in 2015).
 
 \pkap BiDiB
 
-BiDiB (BiDirectional Bus) is an open bus designed by community of model
-railroaders (BiDiB, 2021)\cite{BiDiB}. It fulfills basically all the criteria
-defined above.
+BiDiB (BiDirectional Bus) is an open bus designed by a community of model
+railroaders (BiDiB, 2021)\cite{BiDiB}. It is based on RS485, several types of
+modules exist, communication protocol is available online. However, BiDiB is
+just a protocol specification, no schematics nor PCB designs nor firmwares are
+available by BiDiB. BiDiB fulfills basically all the criteria defined above.
 
 \pkap MTB
 
 The MTB v2 system (Model Train Bus) (Báňa, Trávník, 2021)\cite{MTB} is currently
-used in the laboratory. It allows to control hundreds of track-side elements,
-however its major disadvantage is the impossibility of any further development.
-It is owned by the original authors, so it does not meet the two important
-criteria mentioned above: it is a proprietary solution and there is no
-assumption of the possibility of sustainability over time (it is not possible
-to add or change features). In addition to the lack of sufficient and available
-documentation it also uses components that are obsolete from today's point of
-view, limited processor capabilities in particular.
+used in the laboratory. It allows to control hundreds of track-side elements.
 
-The control of the whole track is divided into two different parts:
+Control of the whole track is divided into two different parts:
 
 \begin{itemize}
 
 \item Vehicle control -- not addressed in the MTB system. For example the DCC
 system with extended loco addresses can be used.
 
-\item Accessory (track-side) control -- here, on the other hand, the MTB concept
+\item Track-side (accessory) control -- here, on the other hand, the MTB concept
 departs from the commercial concepts (the DCC system in commercial solutions
 typically controls accessories as well, as already mentioned in the relevant
 section).
@@ -182,12 +178,12 @@ section).
 Separating the accessory control from vehicle control provides a number of
 advantages. Single communication bus \textit{MTBbus} is used for both commanding track-side
 equipment and obtaining information from it, which allows for simpler (cheaper)
-design, own design brings high extensibility, quite simple bug fixing, independence
-on commercial manufacturers and other common benefits resulting from in-house design.
+design, own design brings high extensibility, fast bug fixing, independence
+on commercial manufacturers and other benefits connected with in-house solution.
 
-Own design is not considered for vehicle control, because in this area, open
+Own design is not beneficial for vehicle control, because in this area, open
 protocols exists, thus risk of vendor-lock is minimized and price of the components
-is quite low due to competitive situation on the market.
+is quite low due to competitive environment on the market.
 
 It is then possible to build software support over both parts to allow to mimic
 the behavior of the signalling equipment on a real railway, which is a
@@ -203,21 +199,25 @@ MTB system consists of:
 \begin{enumerate}
 \item MTBbus protocol specification. MTBbus is RS485 max. 115200 Bd
 single-master bus.
-\item MTB-USB module, which creates interface between MTBbus and PC (USB). It
-is master on MTBbus. It performs real-time operations on MTBbus.
+\item MTB-USB module, which creates interface between MTBbus and PC (via USB). It
+is master on MTBbus. It performs all real-time operations on MTBbus.
 \item Specification of protocol between MTB-USB and PC.
 \item MTB modules. There are various MTB v2 modules: MTB-UNI (universal -- 16
-digital inputs with IR support, 16 open-collector outputs), MTB-UNIm (same as
-MTB-UNI, but without IR support), MTB-TTL (16 digital inputs, 16 TTL outputs),
-MTB-REG (8 analog outputs), MTB-POT (8 analog inputs).
+digital inputs with IR point detectors support, 16 open-collector outputs),
+MTB-UNIm (same as MTB-UNI, but without IR support), MTB-TTL (16 digital inputs,
+16 TTL outputs), MTB-REG (8 powerful analog outputs), MTB-POT (8 analog inputs).
 \item Software support in PC (libraries for connecting to MTB-USB etc.).
 \end{enumerate}
 
+More comprehensive specification of MTB v2 is available at
+\url{https://mtb.kmz-brno.cz/cz/v2}, unformtunately in czech language only.
+
 \end{multicols}
 
-\begin{figure}
+\begin{figure}[ht]
+\center
 \includegraphics[width=\textwidth]{data/mtb_schema.pdf}
-\caption{State of track control in RVCL before modernization}
+\caption{Track control architecture in RVCL before modernization}
 \label{mtb_schema}
 \end{figure}
 
@@ -227,7 +227,7 @@ MTB-REG (8 analog outputs), MTB-POT (8 analog inputs).
 \ppkap Shortcomings of the current MTB system
 
 As complexly illustrated in the figure \ref{mtb_schema}, the system is capable
-of controlling large tracks. The diagram describes architecture of railway in
+of controlling large tracks. The diagram describes an architecture of railway in
 MRC Brno I and in the Railway Vehicles Control Laboratory of the FBE MENDELU.
 This allows interchange of hardware, software and know-how between the Club and
 the faculty.
@@ -239,19 +239,19 @@ some very fundamental problems:
 
 \item Outdated component base -- the last update of the system was
 made in 2007 and currently some of the components used are unavailable. Installed
-electronics manufactured in the past and used on track has no replacement.
-This makes it completely impossible to expand the track with additional railways
+electronics manufactured in the past and used on track has no direct replacement.
+This makes it impossible to expand the track with additional railways
 and stations, makes it impossible to replace broken parts of the electronics
 and to use electronics for other (e.g. diagnostic) purposes.
 
 \item Unresolved licensing conditions -- the authors of the system did not
-provide the source code for the firmware, electrical schematics and PCB designs
-in source form. Thus, essentially no updates can be made, bugs cannot be fixed,
+provide the source code for the firmware, electrical schematics nor PCB designs
+in a source form. Thus, essentially no updates can be made, bugs cannot be fixed,
 new features cannot be added.
 
 \item Technical capabilities of the processors -- current MTB system is based
-on \textit{AT89C2051} MCUs with 2~kB flash memory, 128~B SRAM.  This capacity
-is insufficient for more complex applications, the firmware cannot be extended
+on \textit{AT89C2051} MCUs with 2~kB of flash memory, 128~B SRAM.  This capacity
+is insufficient for more complex applications. The firmware cannot be extended
 and the processors lack some key peripherals, e.g. EEPROM.
 \end{itemize}
 
@@ -269,7 +269,7 @@ track control hardware.
 \item The solution must not be costly.
 \item Communication must include acknowledgement of controller actions,
 the correct functionality of the modules must be detected.
-\item New functions and requirements to be defined in the future must be
+\item New functions and requirements defined in the future must be
 implementable, i.e. the system must be sufficiently extensible.
 \end{enumerate}
 
@@ -278,7 +278,7 @@ components as open hardware, all software as open source.
 
 \kap MTB v4
 
-Based on the current situation described in previous chapter, we decided to
+Based on the current situation described in the previous chapter, we decided to
 improve MTB v2 system and design its new version \textit{MTB v4}. We chose this
 solution, because we perceive the advantages of in-house solution as
 significant.  Furthermore, own design allows students to understand the model
@@ -290,7 +290,9 @@ modules in general are relatively cheap, however the cost of replacing all the
 modules and wiring in the existing railway is unacceptable. MTB v2 must be
 simply upgradable to MTB v4.
 
-Now we describe design of MTB v4 system.
+Now we describe design of MTB v4 system.\footnote{
+Full specification of MTB v4 is available at
+\url{https://mtb.kmz-brno.cz/}, unformtunately in czech language only.}
 
 \pkap Interfaces
 
@@ -319,12 +321,14 @@ problem of train uncoupling was dealt with in detail in the work of Z.\,Galieva
 \pkap Modules
 
 It was conceptually decided not to support analog inputs and outputs or
-pulse-width modulated outputs is MTB v4, because they are not needed in connected
-peripherals. MTB v2 uses three variants of universal IO modules --
-UNI, UNIm and TTL -- which differ in their support for infrared point sensors
-and in type of outputs (TTL vs open-collector). To simplify and cheapen the
-solution, only one universal, mass-producible module shall be developed. To
-connect specific peripherals, expansion module can be used.
+pulse-width modulated outputs in MTB v4, because they are not needed in connected
+peripherals. In case they will be needed in future, new modules will be developed.
+
+MTB v2 uses three variants of universal IO modules -- UNI, UNIm and TTL --
+which differ in their support for infrared point sensors and in type of outputs
+(TTL vs open-collector). To simplify and cheapen the solution, only one
+universal mass-producible module shall be developed. To connect specific
+peripherals, expansion modules can be used.
 
 \pkap Other improvements
 
@@ -339,15 +343,16 @@ functions.
 
 For easy identification of a module in the track (individual modules
 are positioned on the underside of the track at the locations where the
-corresponding equipment is placed) it should be possible to switch on anindication LED on it from the control computer.
+corresponding equipment is placed) it should be possible to switch on an
+indication LED on it from the control computer.
 
-Updating of the module firmware should be possible directly over the bus.
-Considering the large number of modules on a large track (hundreds), it is
-very difficult to update the firmware manually one module at a time. Using
-more advanced processors, this operation should be automatically achievable
-and could allow updating on a module by module basis across the entire track.
-This entails the elimination of errors and omissions, including the
-elimination of time delays in manual updates.
+Updating module firmware should be possible directly over the MTBbus.
+Considering the number of modules on a large track (higher tenths or hundrets),
+it is very difficult to update the firmware manually. Using more advanced
+processors, this operation is achievable and allows updating of a firmware on a
+module by module basis across the entire track. This entails the elimination of
+errors and omissions, including the elimination of time delays in manual
+updates.
 
 \pkap MTBbus v4
 
@@ -362,35 +367,37 @@ module per second with 100 modules on the bus (real packet length taken into
 account), which is enough for safety functions.
 
 The communication is based on periodic polling all modules on the bus, each
-module responds with a message. This confirms, that the module is alive.
+module responds with a message. This confirms that the module is alive.
 Modules that are active are polled more frequently than inactive modules to
 reduce latency. However, inactive modules must be included in the queries
 sometimes as well, so that it can be detected when new modules have been
 connected. Some ideas how to create the communication protocol can be also
 found in work of Lascano and Clyde (2016).
 
-Message of MTBbus v4\footnote{Full specification is available online
-\url{https://github.com/kmzbrnoI/mtbbus-protocol}.} consists of the following
+Message of MTBbus v4 consists of the following
 parts:
 
 \begin{itemize}
 \item Module address -- 1~B, provides an address space for 255 modules, which
-appears to be sufficient.
-\item Message length -- as opposed to the current situation where the maximum length could be
-7~B, the length of the data part has been increased substantially, up to 120~B, which allows sending
-in addition to regular messages, firmware for module updates.
+is sufficient (address 0 is broadcast).
+\item Message length -- as opposed to the MTB v2 situation where the
+maximum length could be 7~B, the length of the data part has been increased
+substantially, up to 120~B, which allows sending in addition to regular
+messages, firmware for module updates.
 \item Message code -- a byte defining the meaning of the message.
 \item Message data part -- up to 120~B of data.
-\item Checksum -- compared to the current state, where only XOR of the message
-is calculated, the new version calculates a CRC-16 checksum instead. For longer
+\item Checksum -- compared to the MTB v2, where only XOR of the message
+is calculated, MTB v4 calculates a CRC-16 checksum instead. For longer
 message length in MTB v4, this type of checksum is more appropriate.
 This solution is similar to ModBus (ModBus, 2021)\cite{ModBus} industrial bus.
 \end{itemize}
 
-The specification of the new version of the MTBbus protocol is two-layered --
-the protocol defines message types, but the data definition for some messages
+The specification\footnote{Full specification is available online
+\url{https://github.com/kmzbrnoI/mtbbus-protocol}.}
+of MTBbus v4 is two-layered --
+the protocol defines messages, but the data definition for some messages
 is different for the specific MTB module types. The data format of inputs and
-outputs, the configuration format of the module, addressing and memory data for
+outputs, the configuration format of the module, addressing and memory organization for
 firmware updates are defined here. This is advantageous in view of possible
 further development, as the protocol can still be the same, although other
 types of modules with different characteristics may be added in the future.
@@ -409,34 +416,38 @@ piece of firmware that will not need to be reprogrammed and will be loaded into
 the processor only once during manufacture by programming the module directly.
 
 The changes in the design concept of the track control electronics are
-outlined as follows in Figure \,\ref{new_mtb_schema}. The implementation is
-described by Horáček (2021b, chap.\,5).
+outlined in Figure \,\ref{new_mtb_schema}. The implementation is
+described by Horáček (2021b, chap.\,5) in detail, here we briefly mention
+key parts.
 
 \pkap MTB-UNI v4
 
-Instead of the current several types of MTB modules, only one type was designed
+Instead of the several types of MTB modules, only one type was designed
 with three freely adjustable options on each output pin: binary, S-COM and
 oscillation mode. The \textit{MTB-UNI v4}\footnote{
 \url{https://github.com/kmzbrnoI/mtb-uni-4-ele},
 \url{https://github.com/kmzbrnoI/mtb-uni-4-fw}
-} universal module will be built on modern components, but with the expectation
+} universal module is built on modern components, but with the expectation
 of long-term availability. MTB-UNI v4 is based on ATmega128A MCU, firmware is
 programmed in C.
 
-The configuration of the modules will be permanently stored in the module
-processors. This is necessary for example to store the communication speed of
+The configuration of the module is permanently stored in the MCU. It is
+necessary for example to store the communication speed of
 the bus and convenient for the defined state of the outputs immediately
 after the power supply is switched on. Maintaining an authoritative version
-however, will be handled on the computer, where all storage, backup and
+however, is handled by the computer, where all storage, backup and
 versioning of configurations can be handled elegantly and much more easily.
 
-A new PCB design is based on well known parts which are commonly used in
+MTB-UNI v4 PCB design is based on well known parts which are commonly used in
 industry. The emphasis is placed on its protection against damage from wrong
 wiring. The damage is done by connecting too high or too low voltage to the
 board. In that case components may be burned. The protection is implemented
-with PTCs, tyrristors and zener diodes. Big advantage in the design of
+with PTCs, thyrristors and zener diodes. Big advantage in the design of
 the protection is its reversible cut-off -- no fuses are burned. Example of
 such circuit is a crowbar circuit (Electronics notes, 2021).
+
+MTB-UNI v4 firmware consists of a main firmware and a bootloader firmware. The
+bootloader is used for main firmware updating over MTBbus.
 
 \pkap MTB-2-AVR
 
@@ -451,14 +462,17 @@ processor in an SMD design with the necessary additional components. By simply
 replacing the processor in the original socket with the new board, a new
 MTB-UNI module is created.
 
+MTB-2-AVR firmware consists of a main firmware and a bootloader firmware. The
+bootloader is used for main firmware updating over MTBbus.
+
 \pkap IRdet
 
-In addition, infrared sensor support had to be added to make sure the new
-solution can be deployed on the current track where these sensors are used. An
-expansion board called \textit{IRdet} was created to allow the connection of up
-to 8 IR sensors and its outputs can be connected to the inputs of the MTB-UNI
-module. These outputs can also be used for other purposes (e.g. signalling in
-control panels).
+Infrared point sensors support had to be implemented in order to make the new
+solution deployable on the current and the  new track where these sensors are
+used. An expansion board called \textit{IRdet} was created to allow the
+connection of up to 8 IR sensors. Its outputs can be connected to the inputs
+of the MTB-UNI module. These outputs can also be used for other purposes (e.g.
+signalling in control panels).
 
 \pkap MTB-USB v4
 
@@ -470,14 +484,17 @@ the original MTB-USB v2 board does not have to be strictly adhered to, as
 this board is only one throughout track and its complete replacement is neither
 technically nor financially too demanding.
 
-PCB was designed in open-source software KiCad, design is based on STM32 MCU
-STM32F103, firmware is programmed in plain C.
+PCB was designed in an open-source software KiCad, design is based on MCU
+STM32F103, firmware is programmed in plain C. Firmware consists of a main firmware
+and of a bootloader, which allows updating the main firmware via USB without
+the need for special programmer (e.g. STlink).
 
 \end{multicols}
 
 \begin{figure}
+\center
 \includegraphics[width=.5\textwidth]{data/new_mtb_schema.pdf}
-\caption{Modernized track control section in RVCL}
+\caption{MTB v4 architecture}
 \label{new_mtb_schema}
 \end{figure}
 
@@ -506,7 +523,7 @@ and MTB Daemon. It is also developed in C++ as dll library.
 
 \kap Discussion
 
-Implementation of the new MTB system and related hardware and software
+Implementation of the MTB v4 system and related hardware and software
 components represent a solution to the necessary conditions for further
 development in the Railway Vehicles Control Laboratory. Expansions are planned to
 include additional station, including the locomotive depot, which will allow
@@ -532,8 +549,8 @@ adaptation to commercial software systems has not yet been addressed.
 
 \kap Conclusion
 
-The upgraded system has been implemented and deployed on a modular track H0
-scale, which is operated within the Railway Vehicles Control Laboratory.
+The upgraded system has been implemented and deployed on all tracks in the
+Railway Vehicles Control Laboratory, as well as on all tracks in MRC Brno I.
 
 In the future, the possibility of supporting higher bus speeds may be
 considered, possibly automatic detection of the set speed, important when
@@ -541,7 +558,7 @@ connecting additional modules (or their replacement). An interesting
 possibility could also be an extension to retransmit bus data over
 wireless connection to control parts of the track that are physically separated
 from the control computer due to spatial, architectural or other reasons.
-An example would be a track consent console used in a foreign station at a
+An example would be a railway consent console used in a foreign station at a
 modular tracks meeting, where each section of track is supplied by a different
 modeller but we need to operate the track as a whole.
 
@@ -550,7 +567,7 @@ modeller but we need to operate the track as a whole.
 The upgrade of the MTB system in the Railway Vehicles Control Laboratory was
 funded by the IGA team project No.\,PEF\_TP\_2020004 called
 \uv{Innovation Electronic Control of Model Tracks}. A major contribution to
-modernisation was also made by the thesis of Jan Horáček (2021b)\cite{DP-Honza}.
+modernisation was made by the thesis of Jan Horáček (2021b)\cite{DP-Honza}.
 
 \kap References
 
