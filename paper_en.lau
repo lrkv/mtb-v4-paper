@@ -33,25 +33,25 @@ $^2$Masaryk University in Brno, Faculty of informatics, Botanická 68a, 612 00 B
 \bigskip\noindent {\bfseries Abstract}
 
 Digital control of a model railway track requires control of the movement of
-vehicles and their functions (sounds, lighting) and control of track elements
-(switches, signals, detectors, etc.). While the control of the vehicles is
+vehicles and their functions (sounds, lighting) and control of track-side elements
+(switches, signals, occupancy detectors, etc.). While the control of the vehicles is
 given by a standard whose functionality is perfectly adequate for normal
 operation, the control of track-side elements can be handled by more ways. For
 small domestic tracks, commercial solutions are available from several
 companies, but for large tracks there is no such concept and the solution is
 usually made tailored to the application (club tracks, simulators for training
-of operating professions on the railway). Track in the Railway Vehicles
+of railway operators). Track in the Railway Vehicles
 Control Laboratory of the Faculty of Business and Economics of Mendel
 University in Brno can be categorised as large, therefore a specific system is
 necessary. However, the existing one is not suitable for several fundamental
 reasons. Therefore, a modernised system has been developed; the overall
 concept and methods are part of the design management of the large track.
 The result is a system that meets the relatively demanding requirements
-and enables further development and use of the laboratory.
+and enables further development and use in the laboratory.
 
 \medskip
-Keywords: large model railway track, electronic control, communication protocol,
-MTB, Railway Vehicles Control Laboratory
+Keywords: model railway, electronic control, communication protocol,
+MTB, interlocking, Railway Vehicles Control Laboratory
 
 \medskip
 JEL classification: O32
