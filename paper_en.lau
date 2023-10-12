@@ -100,7 +100,7 @@ Let us briefly mention in practice frequent solutions.
 
 \pkap Digital Command Control
 
-The Digital Command Control (\textit{DCC}) (NMRA, 2021)\cite{DCC} is probably
+The Digital Command Control (\textit{DCC}) \cite{DCC} is probably
 the most widely used system for digital control of model railways. There are no
 studies to confirm this, but it can be inferred from the number of components
 we see on the market. DCC is an open standard created by the National Model
@@ -125,7 +125,7 @@ various reasons). Schematic of DCC track control is shown in Figure
 \center
 \includegraphics[width=.5\textwidth]{data/dcc_schema}
 \caption{Typical schematic of a DCC system.
-Modified according to Wikipedia (2021)\cite{DCC-wiki}}
+Modified according to Wikipedia \cite{DCC-wiki}}
 \label{schemaDCC}
 \end{figure}
 
@@ -133,8 +133,8 @@ Modified according to Wikipedia (2021)\cite{DCC-wiki}}
 \begin{multicols}2
 
 There is no standard for how the feedback bus works, therefore various
-possibilities have been developed: S88 (OpenDCC, 2021)\cite{S88}, RSbus
-(Pras, 2021)\cite{RSbus} or LocoNET (DCC Wiki, 2021a)\cite{LocoNET}. The latter
+possibilities have been developed: S88 \cite{S88}, RSbus
+\cite{RSbus} or LocoNET \cite{LocoNET}. The latter
 is a licensed bus created by Digitrax and its full use is subject to licensing fees.
 However, it supports two-way communication, allowing direct commanding of
 track devices without the need for DCC signal.
@@ -148,14 +148,14 @@ Prague, presented on professional excursion in 2015).
 \pkap BiDiB
 
 BiDiB (BiDirectional Bus) is an open bus designed by a community of model
-railroaders (BiDiB, 2021)\cite{BiDiB}. It is based on RS485, several types of
+railroaders \cite{BiDiB}. It is based on RS485, several types of
 modules exist, communication protocol is available online. However, BiDiB is
 just a protocol specification, no schematics nor PCB designs nor firmwares are
 available by BiDiB. BiDiB fulfills basically all the criteria defined above.
 
 \pkap MTB
 
-The MTB v2 system (Model Train Bus) (Báňa, Trávník, 2021)\cite{MTB} is currently
+The MTB v2 system (Model Train Bus) \cite{MTB} is currently
 used in the laboratory. It allows to control hundreds of track-side elements.
 
 Control of the whole track is divided into two different parts:
@@ -179,7 +179,7 @@ design, own design brings high extensibility, fast bug fixing, independence
 on commercial manufacturers and other benefits connected with in-house solution.
 
 Own design is not beneficial for vehicle control, because in this area, open
-protocols exists, thus risk of vendor-lock is minimized and price of the components
+protocols exists \cite{DCC}, thus risk of vendor-lock is minimized and price of the components
 is quite low due to competitive environment on the market.
 
 It is then possible to build software support over both parts to allow to mimic
@@ -297,7 +297,7 @@ On one side, MTB communicates with the track-side equipment (points, signals,
 sections, lights, etc.) -- this must have been and was preserved. On the
 other side, MTB communicates with computer. We keep using USB for this
 interface, because we find no disadvantages of it. MTB v4 will be connected
-to interlocking software hJOP (Horáček, 2021a)\cite{hJOP} (currently used in
+to interlocking software hJOP \cite{hJOP} (currently used in
 laboratory). It connects to the track via a dynamically linked library with a
 defined API. New design must support multi-master control, so that the
 individual elements can be controlled solely by the computer, but with multiple
@@ -308,12 +308,12 @@ and wiring, which is highly desirable.
 
 Until now, two types of outputs have been used for communication with the
 track-side hardware -- digital binary (for all two-state outputs) and S-COM
-(Báňa, 2021)\cite{S-com} for transmission of signal aspects. In addition to
+\cite{S-com} for transmission of signal aspects. In addition to
 these two, the new system adds the so-called oscillatory output (digital signal
 with frequency in small number of Hz) for indication purposes and for special
 devices for train set uncoupling (uncouplers in the tracks).\footnote{The
 problem of train uncoupling was dealt with in detail in the work of Z.\,Galieva
-(2020)\cite{DP-Zarina}.}
+\cite{DP-Zarina}.}
 
 \pkap Modules
 
@@ -386,7 +386,7 @@ messages, firmware for module updates.
 \item Checksum -- compared to the MTB v2, where only XOR of the message
 is calculated, MTB v4 calculates a CRC-16 checksum instead. For longer
 message length in MTB v4, this type of checksum is more appropriate.
-This solution is similar to ModBus (ModBus, 2021)\cite{ModBus} industrial bus.
+This solution is similar to ModBus \cite{ModBus} industrial bus.
 \end{itemize}
 
 The specification\footnote{Full specification is available online
@@ -564,7 +564,7 @@ modeller but we need to operate the track as a whole.
 The upgrade of the MTB system in the Railway Vehicles Control Laboratory was
 funded by the IGA team project No.\,PEF\_TP\_2020004 called
 \uv{Innovation Electronic Control of Model Tracks}. A major contribution to
-modernisation was made by the thesis of Jan Horáček (2021b)\cite{DP-Honza}.
+modernisation was made by the thesis of Jan Horáček \cite{DP-Honza}.
 
 \begin{thebibliography}{9}
 
