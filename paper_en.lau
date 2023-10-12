@@ -439,9 +439,9 @@ MTB-UNI v4 PCB design is based on well known parts which are commonly used in
 industry. The emphasis is placed on its protection against damage from wrong
 wiring. The damage is done by connecting too high or too low voltage to the
 board. In that case components may be burned. The protection is implemented
-with PTCs, thyrristors and zener diodes. Big advantage in the design of
-the protection is its reversible cut-off -- no fuses are burned. Example of
-such circuit is a crowbar circuit (Electronics notes, 2021).
+with PTCs, thyrristors and zener diodes. The design is based on a crowbar
+circuit \cite{ElNotes}. Big advantage in the design of the protection is its
+reversible cut-off -- no fuses are burned.
 
 MTB-UNI v4 firmware consists of a main firmware and a bootloader firmware. The
 bootloader is used for main firmware updating over MTBbus.
