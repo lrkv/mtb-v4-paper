@@ -15,10 +15,7 @@
 \def\ppkap#1\par{\subsubsection{#1}}
 \def\nazev#1\par{\section*{\huge #1}}
 \def\autori#1\par{\begin{center}\itshape#1\end{center}}
-%\def\cite#1{(\ref{#1})}
-\def\cite#1{\relax}
 \def\uv#1{„#1“}
-%\def\url#1{{\ttfamily#1}}
 
 \nazev Methods of Electronic Control of Model Railway Track
 
@@ -569,10 +566,8 @@ funded by the IGA team project No.\,PEF\_TP\_2020004 called
 \uv{Innovation Electronic Control of Model Tracks}. A major contribution to
 modernisation was made by the thesis of Jan Horáček (2021b)\cite{DP-Honza}.
 
-\kap References
+\begin{thebibliography}{9}
 
-\def\bibitem#1{\item \label{#1}}
-\begin{enumerate}
 \bibitem{SoC}Anysilicon. 2021. What is a System on Chip (SoC)? [online] [vid. 20. 5. 2021]
 Available at \url{https://anysilicon.com/what-is-a-system-on-chip-soc/}
 \bibitem{S-com}Báňa, V. 2021. Dekodér S-com pro světelná návěstidla ČSD [online]
@@ -617,7 +612,8 @@ What’s the difference? [online] Microcontroller Tips. Available at
 \url{https://www.microcontrollertips.com/microcontrollers-vs-microprocessors-whats}\\\url{-difference/}
 \bibitem{DCC-wiki}Wikipedia. 2021. Digital Command Control [online]
 Available at \url{https://en.wikipedia.org/wiki/Digital_Command_Control}
-\end{enumerate}
+
+\end{thebibliography}
 
 \end{multicols}
 \end{document}
