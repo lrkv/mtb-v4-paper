@@ -425,8 +425,8 @@ oscillation mode. The \textit{MTB-UNI v4}\footnote{
 \url{https://github.com/kmzbrnoI/mtb-uni-4-ele},
 \url{https://github.com/kmzbrnoI/mtb-uni-4-fw}
 } universal module is built on modern components, but with the expectation
-of long-term availability. MTB-UNI v4 is based on ATmega128A MCU, firmware is
-programmed in C.
+of long-term availability. MTB-UNI v4 is based on ATmega128A MCU
+\cite{ATmega128A}, firmware is programmed in C.
 
 The configuration of the module is permanently stored in the MCU. It is
 necessary for example to store the communication speed of
@@ -449,7 +449,8 @@ bootloader is used for main firmware updating over MTBbus.
 \pkap MTB-2-AVR
 
 A cost-saving upgrade option was developed to keep the original MTB-UNI v2 modules, with
-the original processor being replaced with a new one (ATmega328P), all other components,
+the original processor being replaced with a new one (ATmega328P
+\cite{ATmega328P}), all other components,
 cabling and mechanical parts remain. As there is not a new processor available that
 matches the pinout of the original processor, an add-on \textit{MTB-2-AVR} board\footnote{
 \url{https://github.com/kmzbrnoI/mtb-2-avr-pcb},
@@ -481,10 +482,10 @@ the original MTB-USB v2 board does not have to be strictly adhered to, as
 this board is only one throughout track and its complete replacement is neither
 technically nor financially too demanding.
 
-PCB was designed in an open-source software KiCad, design is based on MCU
-STM32F103, firmware is programmed in plain C. Firmware consists of a main firmware
-and of a bootloader, which allows updating the main firmware via USB without
-the need for special programmer (e.g. STlink).
+PCB was designed in an open-source software KiCad \cite{KiCad}, design is based
+on MCU STM32F103 \cite{STM32F103}, firmware is programmed in plain C. Firmware
+consists of a main firmware and of a bootloader, which allows updating the main
+firmware via USB without the need for special programmer (e.g. STlink \cite{stlinkv2}).
 
 \end{multicols}
 
@@ -612,6 +613,17 @@ What’s the difference? [online] Microcontroller Tips. Available at
 \url{https://www.microcontrollertips.com/microcontrollers-vs-microprocessors-whats}\\\url{-difference/}
 \bibitem{DCC-wiki}Wikipedia. 2021. Digital Command Control [online]
 Available at \url{https://en.wikipedia.org/wiki/Digital_Command_Control}
+\bibitem{STM32F103}ST Microelectronics. 2023. STM32F103 [online]
+Available at \url{https://www.st.com/en/microcontrollers-microprocessors/stm32f103.html}
+\bibitem{KiCad}Kicad. 2023. KiCad ESA - A Cross Platform and Open Source
+Electronics Design Automation Suite [online] Available at \url{https://www.kicad.org/}
+\bibitem{stlinkv2}ST Microelectronics. 2023. ST-LINK/V2 in-circuit
+debugger/programmer for STM8 and STM32 [online] Available at
+\url{https://www.st.com/en/development-tools/st-link-v2.html}
+\bibitem{ATmega128A}Microchip Technology. 2023. ATmega128A [online]
+Available at \url{https://www.microchip.com/en-us/product/atmega128a}
+\bibitem{ATmega328P}Microchip Technology. 2023. ATmega328P [online]
+Available at \url{https://www.microchip.com/en-us/product/atmega328p}
 
 \end{thebibliography}
 
