@@ -1,5 +1,5 @@
 \documentclass{article}
-\usepackage{xltxtra, polyglossia,url,multicol}
+\usepackage{xltxtra, polyglossia,url,multicol,hyperref}
 \setdefaultlanguage{english}
 %\setmainfont{Cambria}
 
