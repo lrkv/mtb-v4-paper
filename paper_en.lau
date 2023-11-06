@@ -549,8 +549,13 @@ solution has a great advantage in the openness of the hardware and
 software part, thus the parts needed by different users can be used
 without restrictions. In addition, the cost is lower than the components
 available for conventional domestic tracks. Here a new field of application is
-emerging, for which the individual components are already prepared, but
-adaptation to commercial software systems has not yet been addressed.
+emerging – hardware components have been developed, but adaptation to
+commercial software systems has not yet been addressed. Support for MTBbus could
+be implemented in e.g. JMRI model railroad control software \cite{jmri} as a
+separate software module, or integration with e.g. TrainController
+\cite{traincontroller} commercial model railroad control software could be
+implemented via changing PC interface of MTB-USB to the interface already
+supported by the TrainController software.
 
 \section{Conclusion}
 
@@ -631,6 +636,10 @@ debugger/programmer for STM8 and STM32 [online] Available at
 Available at \url{https://www.microchip.com/en-us/product/atmega128a}
 \bibitem{ATmega328P}Microchip Technology. 2023. ATmega328P [online]
 Available at \url{https://www.microchip.com/en-us/product/atmega328p}
+\bibitem{jmri} JMRI Community. 2023. What is JMRI? [online]
+Available at \url{https://www.jmri.org/}
+\bibitem{traincontroller} Freqiwald Software. 2023. Model Railroad Computer Control with TrainController™ [online]
+Available at \url{https://www.freiwald.com/pages/traincontroller.htm}
 
 \end{thebibliography}
 
