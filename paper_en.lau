@@ -394,12 +394,13 @@ This solution is similar to ModBus \cite{ModBus} industrial bus.
 The specification\footnote{Full specification is available online
 \url{https://github.com/kmzbrnoI/mtbbus-protocol}.}
 of MTBbus v4 is two-layered --
-the protocol defines messages, but the data definition for some messages
-is different for the specific MTB module types. The data format of inputs and
+the protocol defines messages, but the content of some messages
+is different for each MTB module type. The data format of inputs and
 outputs, the configuration format of the module, addressing and memory organization for
-firmware updates are defined here. This is advantageous in view of possible
-further development, as the protocol can still be the same, although other
-types of modules with different characteristics may be added in the future.
+firmware updates are defined for each module type separately. This is advantageous in view of possible
+further development, as the protocol can still remain the same, although other
+types of modules with different characteristics may be added in the future
+without the need to modify a firmware of MTB-USB nor firmware of any older module.
 
 Particular attention in the design is paid to firmware updates of MTB modules.
 The firmware update procedure is described in detail online in the document
