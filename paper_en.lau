@@ -10,6 +10,12 @@
 \voffset -20mm
 \begin{document}
 
+\setlength{\parindent}{0cm}
+%\setlength{\parskip}{3mm plus2pt minus2pt}
+
+% Highlight overfulls
+\setlength{\overfullrule}{5pt} % TODO: remove in production
+
 \section*{Methods of Electronic Control of Model Railway Track}
 
 \begin{center}
