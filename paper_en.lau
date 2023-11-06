@@ -437,6 +437,7 @@ the bus and convenient for the defined state of the outputs immediately
 after the power supply is switched on. Maintaining an authoritative version
 however, is handled by the computer, where all storage, backup and
 versioning of configurations can be handled elegantly and much more easily.
+See \autoref{sect:software} for more details.
 
 MTB-UNI v4 PCB design is based on well known parts which are commonly used in
 industry. The emphasis is placed on its protection against damage from wrong
@@ -503,6 +504,7 @@ firmware via USB without the need for special programmer (e.g. STlink \cite{stli
 \begin{multicols}2
 
 \section{Software}
+\label{sect:software}
 
 Two computer applications were developed as part of the solution --
 \textit{MTB Daemon}\footnote{\url{https://github.com/kmzbrnoI/mtb-daemon}}
@@ -517,7 +519,9 @@ the laboratory to program their own simple applications controlling
 the tracks (IP-B project no.\,8.1.17 of 2018). The programming language of MTB
 Daemon is C++17 with the Qt framework, which allows for a multi-platform
 solution; compilation is possible for both Linux-type OSes, as well as Windows
-type OS.
+type OS. Configuration of MTB Daemon and MTB modules is stored in
+human-readable form in json file. The file is under version control system (git)
+separate for each deployment.
 
 The hJOP MTB Network RCS Library interfaces the existing track control system hJOP
 and MTB Daemon. It is also developed in C++ as dll library.
