@@ -1,5 +1,6 @@
 *.aux
 *.log
+*.out
 
 paper_en.pdf
 paper_cz.pdf
