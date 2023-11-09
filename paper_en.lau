@@ -43,10 +43,13 @@ of railway operators). Track in the Railway Vehicles
 Control Laboratory of the Faculty of Business and Economics of Mendel
 University in Brno can be categorised as large, therefore a specific system is
 necessary. However, the existing one is not suitable for several fundamental
-reasons. Therefore, a modernised system has been developed; the overall
-concept and methods are part of the design management of the large track.
-The result is a system that meets the relatively demanding requirements
-and enables further development and use in the laboratory.
+reasons. Therefore, a modernised system has been developed. New protocol for RS485
+bus has been designed, hardware and firmware of a new GPIO slave module MTB-UNI
+v4 has been developed, new RS485 master module MTB-USB has been developed and
+other two new hardware modules including firmware for their MCUs have been
+developed. A computer application MTB Daemon and a library have been developed
+to access the bus. The result is a system that meets the relatively demanding
+requirements and enables further development and use in the laboratory.
 
 \medskip
 Keywords: model railway, electronic control, communication protocol,
