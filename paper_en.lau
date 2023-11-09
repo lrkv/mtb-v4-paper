@@ -565,6 +565,27 @@ Compared to MTB v2 and other commercially available systems, MTB v4 brings
 higher level of safety -- all messages are acknowledged, module failure is detected
 etc. This creates a pressure on a safety of similar commercial components.
 
+In the future, the possibility of supporting higher bus speeds may be
+considered. This will allow even shorter delay between change of input of
+MTB module and a reaction to the change in a computer. Another enhancement could be
+an automatic detection of the bus speed by MTB modules, important when
+connecting new modules or replacing broken modules on-the-fly. An interesting
+possibility could also be an extension to retransmit bus data over
+wireless connection to control parts of the track that are physically separated
+from the control computer due to spatial, architectural or other reasons.
+An example would be a railway consent console used in a foreign station at a
+modular tracks meeting, where each section of track is supplied by a different
+modeller but we need to operate the track as a whole.
+
+Excluding already-mentioned latency and automatic bus speed detection, the last
+important limitation of MTB v4 is the maximum number of modules on one bus. From
+our point of view, 255 modules on one bus is enough, however some non-standard
+applications of MTBbus which need more modules could be imagined. Simply adding
+more bits for module address is not suitable, as mechanisms like discovering
+new modules could take long time and latency can grow considerably. Bus with
+bigger maximum number of modules would probably require a different media
+access control mechanism.
+
 \section{Conclusion}
 
 MTB v4 has been implemented and deployed on all tracks in the Railway Vehicles Control
@@ -574,16 +595,6 @@ with MTB-2-AVR addon module. 7 MTB-UNI v4 modules have been in operation for 100
 hours without any major problems. MTBbus v4 has been in operation for 300+ hours
 in total with only minor difficulties. These issues were solved with new firmware
 versions, where uploading a new firmware over MTBbus turned out to be very useful.
-
-In the future, the possibility of supporting higher bus speeds may be
-considered, possibly automatic detection of the bus speed by MTB modules, important when
-connecting new modules or replacing broken modules on-the-fly. An interesting
-possibility could also be an extension to retransmit bus data over
-wireless connection to control parts of the track that are physically separated
-from the control computer due to spatial, architectural or other reasons.
-An example would be a railway consent console used in a foreign station at a
-modular tracks meeting, where each section of track is supplied by a different
-modeller but we need to operate the track as a whole.
 
 MTB v4 can also be used in other fields, where centralized computer control of
 several dislocated peripherals is used. Examples include home automatization,
