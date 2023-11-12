@@ -437,8 +437,8 @@ of long-term availability. MTB-UNI v4 is based on ATmega128A MCU
 The configuration of the module is permanently stored in the MCU. It is
 necessary for example to store the communication speed of
 the bus and convenient for the defined state of the outputs immediately
-after the power supply is switched on. Maintaining an authoritative version
-however, is handled by the computer, where all storage, backup and
+after the power supply is switched on. However maintaining an authoritative configuration
+is handled by the computer, where all storage, backup and
 versioning of configurations can be handled elegantly and much more easily.
 See \autoref{sect:software} for more details.
 
@@ -595,7 +595,7 @@ MTB v4 has been implemented and deployed on all tracks in the Railway Vehicles C
 Laboratory as well as on all tracks in MRC Brno I. That includes 3 independent
 layouts with 103 MTB modules in total. Most of these are MTB-UNI v2 modules
 with MTB-2-AVR addon module. 7 MTB-UNI v4 modules have been in operation for 100+
-hours without any major problems. MTBbus v4 has been in operation for 300+ hours
+hours each without any major problems. MTBbus v4 has been in operation for 300+ hours
 in total with only minor difficulties. These issues were solved with new firmware
 versions, where uploading a new firmware over MTBbus turned out to be very useful.
 
