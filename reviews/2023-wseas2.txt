@@ -1,0 +1,27 @@
+Dear Dr. Jiří Rybička,
+
+We have completed the proofreading of your document by checking and changing flaws in grammar, spelling, punctuation, incorrect tenses and commas. Moreover, we have checked that all the figures, tables and references of the article are cited inside the text  (see wseas-712-with track changes.pdf).
+
+However, a few corrections are required such as;
+
+1/. you need to remove all texts with "author name-surnames, year" such as "Pavlas" etc., and replace them with the corresponding reference numbers in brackets. Also, please make sure that all citations appear in a sequel numerical order. This means that by starting from page 1, each citation should follow an ascending numerical order throughout the paper [1], [2], [3]...[28].
+
+2/. url links are not permitted and authors are required to use references in brackets (https://github.com/kmzbrnoI/mtb-uni-4-ele, https://github.com/kmzbrnoI/mtb-uni-4-fw). You need to move the url to the reference list and refer the corresponding reference number in brackets.
+
+3/. you need to remove the footnotes; please transfer these details in the reference list.
+
+4/. you need to add the "Accessed Date" to all references that have a URL.
+
+5/. there are several references that are not in English and therefore please use references in English that are indexed in well-known databases such as Scopus, Web of Science, etc. and they are publicly available. For those references that appear in other languages than in English, please give the English translation first followed by the original foreign-language reference in parenthesis.
+
+Lastly, please read carefully the new version (see wseas-712.docx) of your manuscript which is attached to this email and confirm that you agree with our changes.
+
+All the above corrections should be made only to the enclosed version.
+
+As soon as you are ready, please email me the revised version.
+
+Best Regards,
+
+Melandri Elvira
+WSEAS Editing Department
+www.wseas.com
